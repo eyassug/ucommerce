@@ -1,0 +1,10 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoTemplatePage
+@{
+    Layout = "Layout.cshtml";
+}
+
+@Umbraco.RenderMacro("ucHomepageBanners")
+<div class="hero-unit">
+    @Umbraco.Field("content")
+</div>
+@Umbraco.RenderMacro("ucHomepageCatalog")
