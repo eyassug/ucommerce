@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Macros>
+  <macro>
+    <name>uCommerce Category Navigation</name>
+    <alias>uCommerceCategoryNavigation</alias>
+    <scriptType />
+    <scriptAssembly />
+    <scriptingFile>~/Views/MacroPartials/uCommerce CategoryNavigation.cshtml</scriptingFile>
+    <xslt />
+    <useInEditor>False</useInEditor>
+    <dontRender>False</dontRender>
+    <refreshRate>0</refreshRate>
+    <cacheByMember>False</cacheByMember>
+    <cacheByPage>False</cacheByPage>
+    <properties />
+  </macro>
+  <macro>
+    <name>uCommerce Facets</name>
+    <alias>uCommerceFacets</alias>
+    <scriptType />
+    <scriptAssembly />
+    <scriptingFile>~/Views/MacroPartials/uCommerce Facets.cshtml</scriptingFile>
+    <xslt />
+    <useInEditor>False</useInEditor>
+    <dontRender>False</dontRender>
+    <refreshRate>0</refreshRate>
+    <cacheByMember>False</cacheByMember>
+    <cacheByPage>False</cacheByPage>
+    <properties />
+  </macro>
+  <macro>
+    <name>uCommerce Mini Basket</name>
+    <alias>uCommerceMiniBasket</alias>
+    <scriptType />
+    <scriptAssembly />
+    <scriptingFile>~/Views/MacroPartials/uCommerce Mini Basket.cshtml</scriptingFile>
+    <xslt />
+    <useInEditor>False</useInEditor>
+    <dontRender>False</dontRender>
+    <refreshRate>0</refreshRate>
+    <cacheByMember>False</cacheByMember>
+    <cacheByPage>False</cacheByPage>
+    <properties />
+  </macro>
+  <macro>
+    <name>uCommerce Voucher</name>
+    <alias>uCommerceVoucher</alias>
+    <scriptType />
+    <scriptAssembly />
+    <scriptingFile>~/Views/MacroPartials/uCommerce Voucher.cshtml</scriptingFile>
+    <xslt />
+    <useInEditor>False</useInEditor>
+    <dontRender>False</dontRender>
+    <refreshRate>0</refreshRate>
+    <cacheByMember>False</cacheByMember>
+    <cacheByPage>False</cacheByPage>
+    <properties />
+  </macro>
+  <macro>
+    <name>uCommerce Homepage Catalog</name>
+    <alias>uCommerceHomepageCatalog</alias>
+    <scriptType />
+    <scriptAssembly />
+    <scriptingFile>~/Views/MacroPartials/uCommerce Homepage Catalog.cshtml</scriptingFile>
+    <xslt />
+    <useInEditor>False</useInEditor>
+    <dontRender>False</dontRender>
+    <refreshRate>0</refreshRate>
+    <cacheByMember>False</cacheByMember>
+    <cacheByPage>False</cacheByPage>
+    <properties />
+  </macro>
+  <macro>
+    <name>uCommerce Breadcrumbs</name>
+    <alias>uCommerceBreadcrumbs</alias>
+    <scriptType />
+    <scriptAssembly />
+    <scriptingFile>~/Views/MacroPartials/uCommerce Breadcrumbs.cshtml</scriptingFile>
+    <xslt />
+    <useInEditor>False</useInEditor>
+    <dontRender>False</dontRender>
+    <refreshRate>0</refreshRate>
+    <cacheByMember>False</cacheByMember>
+    <cacheByPage>False</cacheByPage>
+    <properties />
+  </macro>
+</Macros>
