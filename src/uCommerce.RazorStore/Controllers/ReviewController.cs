@@ -15,22 +15,26 @@ using Umbraco.Web.Models;
 using Umbraco.Web.Mvc;
 using Umbraco.Web;
 using UCommerce.Pipelines;
+using UCommerce.Api;
 
 namespace UCommerce.RazorStore.Controllers
 {
     public class ReviewController : SurfaceController
     {
         // GET: Review
-        public ActionResult Index(ProductViewModel mappedProduct)
+        [HttpGet]
+        public ActionResult Index()
         {
             Product currentProduct = SiteContext.Current.CatalogContext.CurrentProduct;
+            var mappedProduct = new ProductViewModel();
 
             if (currentProduct.ProductReviews.Any())
             {
+                mappedProduct.Sku = currentProduct.Sku;
                 mappedProduct.Reviews = MapReviews(currentProduct);
             }
-            
-            return View("/Views/ProductReviews.cshtml");
+
+            return View("/Views/PartialView/ProductReview.cshtml", mappedProduct);
         }
 
         private IList<ProductReviewViewModel> MapReviews(Product product)
@@ -53,8 +57,11 @@ namespace UCommerce.RazorStore.Controllers
 
 
         [HttpPost]
-        public ActionResult Index(Product product, string nameKey, string emailKey, string ratingKey, string headlineKey, string reviewTextKey)
-        { 
+        public ActionResult Index(ProductReviewViewModel formReview)
+        {
+
+            var product = SiteContext.Current.CatalogContext.CurrentProduct;
+            var category = SiteContext.Current.CatalogContext.CurrentCategory;
 
             var request = System.Web.HttpContext.Current.Request;
             var basket = SiteContext.Current.OrderContext.GetBasket();
@@ -64,11 +71,11 @@ namespace UCommerce.RazorStore.Controllers
                 return View();
             }
 
-            var name = request.Form[nameKey];
-            var email = request.Form[emailKey];
-            var rating = Convert.ToInt32(request.Form[ratingKey]) * 20;
-            var reviewHeadline = request.Form[headlineKey];
-            var reviewText = request.Form[reviewTextKey];
+            var name = formReview.Name;
+            var email = formReview.Email;
+            var rating = Convert.ToInt32(formReview.Rating) * 20;
+            var reviewHeadline = formReview.Title;
+            var reviewText = formReview.Comments;
 
             if (basket.PurchaseOrder.Customer == null)
             {
@@ -86,7 +93,7 @@ namespace UCommerce.RazorStore.Controllers
 
             basket.PurchaseOrder.Customer.Save();
 
-            var review = new UCommerce.EntitiesV2.ProductReview()
+            var review = new ProductReview()
             {
                 ProductCatalogGroup = SiteContext.Current.CatalogContext.CurrentCatalogGroup,
                 ProductReviewStatus = ProductReviewStatus.SingleOrDefault(s => s.Name == "New"),
@@ -104,7 +111,8 @@ namespace UCommerce.RazorStore.Controllers
 
             PipelineFactory.Create<ProductReview>("ProductReview").Execute(review);
 
-            return View();
+            return Redirect(CatalogLibrary.GetNiceUrlForProduct(product, category));
+
         }
     }
 }

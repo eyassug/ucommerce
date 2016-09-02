@@ -29,6 +29,7 @@ namespace UCommerce.RazorStore.Models
         {
 			Variants = new List<ProductViewModel>();
             Properties = new List<ProductPropertiesViewModel>();
+            Reviews = new List<ProductReviewViewModel>();
 
 		}
         public bool IsVariant { get; set; }
