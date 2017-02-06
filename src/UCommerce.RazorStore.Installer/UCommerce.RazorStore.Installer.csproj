@@ -115,7 +115,9 @@
     <Content Include="XmlStubs\Macros.xml">
       <SubType>Designer</SubType>
     </Content>
-    <Content Include="XmlStubs\DocumentTypes.xml" />
+    <Content Include="XmlStubs\DocumentTypes.xml">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="XmlStubs\Documents.xml" />
     <Content Include="XmlStubs\Info.xml">
       <SubType>Designer</SubType>
@@ -150,6 +152,7 @@
     <Content Include="umbraco\uCommerce\Install\InstallDemoData.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="PackageActions\InstallDefaultAcceleratorData.cs" />
     <Compile Include="PackageActions\UpdateWebConfigAppSettings.cs" />
     <Compile Include="PackageActions\MergeConfigFiles.cs" />
     <Compile Include="PackageActions\PackageActionsHelpers.cs" />
